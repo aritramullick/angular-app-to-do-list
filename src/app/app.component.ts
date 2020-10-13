@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-angular-app';
+  title = "Aritra's To-Do List Maker";
+  todos = [{
+    label: "Pay your bills",
+    done: true
+  }];
+
+  addTodo(todoLabel) {
+    if (todoLabel === "")
+      return;
+    this.todos.push({
+      label: todoLabel,
+      done: false
+    });
+  }
 }
