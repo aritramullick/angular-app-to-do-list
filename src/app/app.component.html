@@ -5,16 +5,18 @@
 <h1>{{title}}</h1>
 <input type = "text" #newTodo/>
 <button (click)="addTodo(newTodo.value)">Add a task</button>
-<table>
+<table cellspacing="0" cellpadding="0">
   <tr>
     <th>Task</th>
-    <th>Done</th>
+    <th id='secondCol'>Done</th>
   </tr>
   <tr *ngFor="let todo of todos">
     <td>{{todo.label}}</td>
-    <td><button (click)="deleteTodo(todo)">
-      <img src='./assets/checkmark.png'/>
-    </button></td>
+    <td>
+      <button (click)="deleteTodo(todo)" id='btn'>
+      <img src='./assets/checkmark.png' id='checkmark'/>
+    </button>
+  </td>
   </tr>
 </table>
 
