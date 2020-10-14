@@ -46,6 +46,5 @@ deleteTodo(todo) {
       }
     })
   });
-    // this.todos = this.todos.filter( t => t.label !== todo.label);
   }
 }
