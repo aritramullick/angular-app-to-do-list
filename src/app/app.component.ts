@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { Observable } from 'rxjs';
+import { JsonPipe } from '@angular/common';
 
 
 @Component({
@@ -14,20 +15,28 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  item: Observable<any>;
+  todos = [];
+  items: Observable<any[]>;
   constructor(db: AngularFireDatabase) {
-    this.item = db.object('/').valueChanges();
+    db.list('/').valueChanges().subscribe((value) => {
+      value.forEach((ele) => {
+        this.todos.push(ele);
+      })
+      console.log(this.todos);
+    })
+
+    // this.items.forEach((ele) => {
+    //   this.todos.push(ele);
+    //   console.log(ele);
+    // });
   }
   
   title = "first-angular-app";
-  todos = [{
-    label: "Pay your bills",
-    done: true
-  }];
 
   addTodo(todoLabel) {
     if (todoLabel === "")
       return;
+    
     this.todos.push({
       label: todoLabel,
       done: false

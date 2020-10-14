@@ -1,5 +1,7 @@
 <!-- <h1>{{ (item | async)?.name }}</h1> -->
-<h1>{{ item | async | json }}</h1>
+<li *ngFor="let item of items | async">
+    {{ item | json }}
+</li>
 <h1>{{title}}</h1>
 <input type = "text" #newTodo/>
 <button (click)="addTodo(newTodo.value)">Add a task</button>
