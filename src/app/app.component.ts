@@ -13,9 +13,12 @@ export class AppComponent {
   todos = [];
   items: Observable<any[]>;
   reference;
+  database;
   constructor(db: AngularFireDatabase) {
     this.reference = db.list('/');
+    this.database = db;
     db.list('/').valueChanges().subscribe((value) => {
+      this.todos = []
       value.forEach((ele) => {
         this.todos.push(ele);
       })
@@ -32,10 +35,17 @@ export class AppComponent {
     itemsRef.push({ label: todoLabel });
   }
   
-  deleteTodo(todo) {
-// to get a key, check the Example app below
-    // db.list('/', ref => ref.orderByChild('size').equalTo('large'))
-    // this.reference.remove('');
-    this.todos = this.todos.filter( t => t.label !== todo.label);
+deleteTodo(todo) {
+  this.reference.snapshotChanges()
+  .subscribe(actions => {
+    actions.forEach(action => {
+      let obj = action.payload.val();
+      console.log(obj)
+      if (obj.label === todo.label) {
+        this.reference.remove(action.key.toString());
+      }
+    })
+  });
+    // this.todos = this.todos.filter( t => t.label !== todo.label);
   }
 }
