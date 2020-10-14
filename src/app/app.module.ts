@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'first-angular-app'),
-    AngularFireStorageModule
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,10 @@
       "jasmine",
       "jasminewd2",
       "node"
-    ]
+    ],
+    "enableIvy" : false,
+    "angularCompilerOptions": {
+      "enableIvy": false
+    }
   }
 }
