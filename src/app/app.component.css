@@ -26,7 +26,7 @@ h1 {
 }
 
 table {
-    margin-top: 14%;
+    top: 420px;
     left:50%;
     margin-left:-170px;
     /* margin: 0 auto; */
@@ -92,8 +92,8 @@ td {
 
 
 #top {
-    margin-top: 5%;
-    margin-left: 75%;
+    /* margin-top: 5%;
+    margin-left: 75%; */
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
@@ -101,13 +101,17 @@ td {
     /* margin-left: 20%;
     margin-right: 20%; */
     min-width: 250px;
+    max-width: 250px;
     min-height: 20px;
-    position: absolute;
+    position: relative;
     background-color: #193367;
     border-top-left-radius: 35px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 35px;
+    top: 210px;
+    left:40%
+
 }
 
 
