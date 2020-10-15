@@ -124,6 +124,7 @@ textarea {
     font-family: 'Playfair Display', serif;
     font-size: medium;
     font-style: bold;
+    max-height: 60px;
 }
 #add {
     position: absolute;
