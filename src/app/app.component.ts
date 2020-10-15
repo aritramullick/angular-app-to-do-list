@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-
+import { particlesJS } from 'particles.js';
+import { OnInit } from '@angular/core';
+declare var particlesJS: any;
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   todos = [];
   items: Observable<any[]>;
   reference;
@@ -25,8 +27,14 @@ export class AppComponent {
       console.log(this.todos);
     })
   }
+
+  ngOnInit() {
+    particlesJS.load('particles-js', 'assets/particles.json', function() {
+      console.log('callback - particles.js config loaded');
+    });// Called after the constructor and called  after the first ngOnChanges() 
+ }
   
-  title = "first-angular-app";
+  title = "My Tasks";
 
   addTodo(todoLabel) {
     if (todoLabel === "")

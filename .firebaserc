@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "angular-d9f4b"
+  },
+  "targets": {
+    "angular-d9f4b": {
+      "hosting": {
+        "first-angular-app": [
+          "angular-d9f4b"
+        ]
+      }
+    }
+  }
+}
