@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     });// Called after the constructor and called  after the first ngOnChanges() 
  }
   
-  title = "My Tasks";
+  title = "Reminders";
 
   addTodo(todoLabel) {
     if (todoLabel === "")
