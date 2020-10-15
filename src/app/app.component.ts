@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
   
   title = "Reminders";
 
-  addTodo(todoLabel) {
+  public addTodo(todoLabel) {
     if (todoLabel === "")
       return;
     const itemsRef = this.reference;

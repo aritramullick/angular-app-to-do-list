@@ -26,12 +26,17 @@ h1 {
 }
 
 table {
-    margin: 0 auto;
+    margin-top: 14%;
+    left:50%;
+    margin-left:-210px;
+    /* margin: 0 auto; */
+    position: absolute;
     background-color: #ffe6cc;
     padding-bottom: 20px;
     margin-right: -40px;
     border-radius: 20px;
-    min-height: 70%;
+    border: 1px solid black;
+    /* min-height: 60%; */
 }
 
 tr {
@@ -40,22 +45,34 @@ tr {
     word-wrap: break-word;
     max-width: 450px;
     min-width: 450px;
+    color: #193367;
+    border: 10px black;
+    border-radius: 20px;
 }
 
 td {
     word-wrap: break-word;
     max-width: 225px;
     min-width: 225px;
+    font-family: 'Playfair Display', serif;
+    color: #193367;
+    /* border: 1px solid black;
+    border-radius: 20px; */
 }
 
 th {
+    font-family: 'Playfair Display', serif;
+    font-style: bold;
     text-align: center;
     max-width: 225px;
     min-width: 225px;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 
 .input {
-    text-align: center;
+    font-family: 'Playfair Display', serif;
+    text-align: right;
     font-size: larger;
 }
 
@@ -72,29 +89,50 @@ th {
     z-index:-1;
 }
 
-/* #taskbox {
-    margin-top: 5%;
-    background-color: #193367;
-    max-width: 450px;
-    min-width: 450px;
-    position: absolute;
-    left: 50%;
-    margin-left: -225px;
-    min-height: 70%;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 20px;
-} */
 
 #top {
-    margin-top: 215px;
-    margin-left: 44%;
-    padding: 20px;
+    margin-top: 5%;
+    margin-left: 75%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 15px;
     /* margin-left: 20%;
     margin-right: 20%; */
+    min-width: 250px;
+    min-height: 20px;
     position: absolute;
-    background-color: darksalmon;
+    background-color: #193367;
     border-top-left-radius: 35px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 35px;
+}
+
+
+textarea {
+    position: relative;
+    right:18%;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: medium;
+    font-style: bold;
+}
+img {
+    position: absolute;
+    width: 45px;
+    height:37.5px;
+    right:5%;
+    top: 25px;
+}
+
+#task {
+    color: #ffe6cc;
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
+    font-style: bold;
+    font-size: x-large;
+    padding-bottom: 10px;
 }
