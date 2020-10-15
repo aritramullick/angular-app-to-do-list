@@ -10,23 +10,15 @@
     <textarea #newTodo type="text" name="content" class="form-control"></textarea>
   </div>
   <div class='addTask'>
-    <img src='../assets/add.png'(click)="this.addTodo(newTodo.value); newTodo.value=''"/>
+    <img src='../assets/add.png'(click)="this.addTodo(newTodo.value); newTodo.value=''"id='add'/>
   </div>
 </div>
   <table>
-    <tr>
-      <th>Task</th>
-      <th>Done</th>
-    </tr>
     <tr *ngFor="let todo of todos">
-      <td>{{todo.label}}</td>
-      <td>
-        <a>
-          <span id='check'(click)="this.deleteTodo(todo)" id='btn'>
-            &#10004;
-          </span>
-        </a>
+      <td class='checkmark'>
+          <img src='../assets/done.png' (click)="this.deleteTodo(todo)" id='btn'/>
     </td>
+    <td id='label'>{{todo.label}}</td>
     </tr>
   </table>
 </span>

@@ -28,20 +28,20 @@ h1 {
 table {
     margin-top: 14%;
     left:50%;
-    margin-left:-210px;
+    margin-left:-170px;
     /* margin: 0 auto; */
     position: absolute;
     background-color: #ffe6cc;
     padding-bottom: 20px;
     margin-right: -40px;
     border-radius: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* min-height: 60%; */
 }
 
 tr {
     padding: 10%;
-    text-align: center;
+    text-align: left;
     word-wrap: break-word;
     max-width: 450px;
     min-width: 450px;
@@ -52,22 +52,23 @@ tr {
 
 td {
     word-wrap: break-word;
-    max-width: 225px;
-    min-width: 225px;
+    max-width: 140px;
+    min-width: 140px;
     font-family: 'Playfair Display', serif;
     color: #193367;
+    padding-bottom: 10px;
     /* border: 1px solid black;
     border-radius: 20px; */
 }
 
-th {
-    font-family: 'Playfair Display', serif;
-    font-style: bold;
+
+.checkmark {
+    padding-top: 10px;
+    padding-left: 5px;
     text-align: center;
-    max-width: 225px;
-    min-width: 225px;
-    border: 1px solid black;
-    border-radius: 20px;
+    max-width: 30px;
+    min-width: 30px;
+
 }
 
 .input {
@@ -120,7 +121,7 @@ textarea {
     font-size: medium;
     font-style: bold;
 }
-img {
+#add {
     position: absolute;
     width: 45px;
     height:37.5px;
@@ -135,4 +136,29 @@ img {
     font-style: bold;
     font-size: x-large;
     padding-bottom: 10px;
+}
+
+/* #checkmark {
+    max-width: 150px;
+    min-width: 150px;
+} */
+
+img:hover {
+    cursor: pointer;
+}
+
+#btn:hover {
+    cursor: pointer;
+}
+
+#btn {
+    max-width: 25px;
+    min-width: 25px;
+}
+
+#label {
+    min-width: 300px;
+    padding-right: 10px;
+    max-width: 300px;
+    margin-right: -30px;
 }
