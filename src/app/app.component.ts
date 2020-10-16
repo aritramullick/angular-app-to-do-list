@@ -19,13 +19,25 @@ export class AppComponent implements OnInit {
   constructor(db: AngularFireDatabase) {
     this.reference = db.list('/');
     this.database = db;
-    db.list('/').valueChanges().subscribe((value) => {
-      this.todos = []
-      value.forEach((ele) => {
-        this.todos.push(ele);
-      })
-      console.log(this.todos);
+    this.reference.snapshotChanges()
+  .subscribe(values => {
+    this.todos=[];
+    values.forEach(value => {
+      let obj = value.payload.val();
+      this.todos.push( {
+        label: obj.label,
+        key: value.key.toString(),
+        done: obj.done });
+      // console.log(obj)
     })
+  });
+    // db.list('/').valueChanges().subscribe((value) => {
+    //   this.todos = []
+    //   value.forEach((ele) => {
+    //     this.todos.push(ele);
+    //   })
+    //   console.log(this.todos);
+    // })
   }
 
   ngOnInit() {
@@ -40,19 +52,16 @@ export class AppComponent implements OnInit {
     if (todoLabel === "")
       return;
     const itemsRef = this.reference;
-    itemsRef.push({ label: todoLabel });
+    itemsRef.push({ label: todoLabel, done: false });
   }
-  
+  public doneTodo(todo) {
+    this.database.object('/'+todo.key)
+    .update({
+      done: true
+    });
+  }
 deleteTodo(todo) {
-  this.reference.snapshotChanges()
-  .subscribe(actions => {
-    actions.forEach(action => {
-      let obj = action.payload.val();
-      console.log(obj)
-      if (obj.label === todo.label) {
-        this.reference.remove(action.key.toString());
-      }
-    })
-  });
+  this.database.object('/'+todo.key)
+  .remove();
   }
 }

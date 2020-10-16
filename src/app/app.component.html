@@ -16,9 +16,17 @@
   <table>
     <tr *ngFor="let todo of todos">
       <td class='checkmark'>
-          <img src='../assets/done.png' (click)="this.deleteTodo(todo)" id='btn'/>
+        <div *ngIf='todo.done'>
+          <img src='../assets/done.png' id='btn'/>
+        </div>
+        <div *ngIf='!todo.done'>
+          <img src='../assets/blankbox.png' (click)="this.doneTodo(todo)" id='btn'/>
+        </div>
     </td>
     <td id='label'>{{todo.label}}</td>
+    <td class='checkmark'>
+      <img src='../assets/delete.png' (click)="this.deleteTodo(todo)" id='deleteBtn'/>
+    </td>
     </tr>
   </table>
 </span>
