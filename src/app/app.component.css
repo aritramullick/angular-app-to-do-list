@@ -35,6 +35,9 @@ table {
     padding-bottom: 20px;
     margin-right: -40px;
     border-radius: 20px;
+    overflow-y:scroll;
+    height: 270px;
+    display:block;
     /* border: 1px solid black; */
     /* min-height: 60%; */
 }
