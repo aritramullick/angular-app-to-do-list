@@ -60,6 +60,7 @@ export class AppComponent implements OnInit {
       done: true
     });
   }
+  
 deleteTodo(todo) {
   this.database.object('/'+todo.key)
   .remove();
